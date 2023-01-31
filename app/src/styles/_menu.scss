@@ -1,0 +1,25 @@
+.ant-menu-inline > .ant-menu-item,
+.ant-menu-sub.ant-menu-inline > .ant-menu-item,
+.ant-menu-sub.ant-menu-inline > .ant-menu-submenu > .ant-menu-submenu-title {
+	line-height: 1.2;
+	min-height: 40px;
+	height: auto;
+	display: flex;
+	align-items: center;
+	white-space: normal;
+}
+
+.ant-menu-item > a {
+	color: #177529;
+}
+
+.ant-menu:not(.ant-menu-horizontal) .ant-menu-item-selected {
+	background-color: #1775293b;
+}
+
+.ant-menu-vertical .ant-menu-item:after,
+.ant-menu-vertical-left .ant-menu-item:after,
+.ant-menu-vertical-right .ant-menu-item:after,
+.ant-menu-inline .ant-menu-item:after {
+	border-right: 3px solid #177529;
+}

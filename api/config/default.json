@@ -1,0 +1,45 @@
+{
+	"host": "localhost",
+	"port": 3001,
+	"public": "../public/",
+	"paginate": {
+		"default": 10,
+		"max": 50
+	},
+	"authentication": {
+		"secret": "c24d2c532dfe43d0e8985edfbe800edd6b8e55ed9a07d849d055f07ad3559a18fce51c6e401f52a4b809862527cf81c7d669bc12b76b38cb60d83372c32e36164612aa0ec2e82e8e5e955f85837a329ce8c0ae3fc1bdca58b5f149d97b2e6a4a6cb2b5f57a80bc6cf106be04773b55f899cee3a6632c0873adcd633b7b75a16114bc1814836ceaf4d4821c043ca20e6c6d78a10a4cb177fbcff8b9ba19913a74b161fb8f3f78f91115ec918f2a379a7bc2884922d5661cae40790b24f08bbc5c5a4e2a37921a5173dbb8158c797714ef691078f41022842db4c383f0e19a7862c82bf0291e3ba3bba1240aff9f2ef4d176b5f7ca3c8bc87cfb8cad4b6befc68c",
+		"strategies": [ "jwt", "local", "pass-key" ],
+		"path": "/api/authentication",
+		"service": "api/users",
+		"jwt": {
+			"header": {
+				"typ": "access"
+			},
+			"audience": "https://yourdomain.com",
+			"subject": "API",
+			"issuer": "Smart Sales",
+			"algorithm": "HS256",
+			"expiresIn": "1d"
+		},
+		"local": {
+			"entity": "\\user",
+			"usernameField": "\\username",
+			"passwordField": "\\password"
+		}
+	},
+	"mongodb": "mongodb://localhost:27017/CSHA",
+	"mailer": {
+		"from": "\"ETAC\" <etac@test.com>",
+		"smtpConfig": {
+			"host": "localhost",
+			"port": 27017,
+			"secure": false
+		}
+	},
+	"recaptcha": {
+		"secret": "RECAPTCHA_SECRET"
+	},
+	"handshake": {
+		"wsdl": "wsdl"
+	}
+}

@@ -1,0 +1,16 @@
+{
+  "port": "PORT",
+  "mongodb": "MONGODB_URL",
+  "mailer": {
+    "from": "MAILER_FROM",
+    "smtpConfig": {
+      "host": "SMTP_HOST",
+      "port": "SMTP_PORT",
+      "secure": "SMTP_SECURE",
+      "auth": {
+        "user": "SMTP_USER",
+        "pass": "SMTP_PASS"
+      }
+    }
+  }
+}

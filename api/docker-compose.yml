@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mongo:
+    image: mongo:latest
+    container_name: etac-db
+    ports:
+      - 127.0.0.1:27017:27017
+    volumes:
+      - ./data/mongo:/data
+  smtp:
+    image: schickling/mailcatcher
+    container_name: etac-smtp
+    ports:
+      - '1082:1080'
+      - '127.0.0.1:1027:1025'

@@ -1,0 +1,12 @@
+.header-title {
+  @media (max-width: 991px) {
+    display: none;
+  }
+}
+
+:root
+  .ant-layout-header
+  .ant-dropdown-trigger.user-photo
+  .anticon:not(.anticon-ellipsis) {
+  font-size: 24px;
+}

@@ -1,0 +1,109 @@
+{
+  "name": "etac-api",
+  "description": "ETAC api",
+  "version": "1.0.0",
+  "main": "src",
+  "keywords": [
+    "feathers"
+  ],
+  "author": {
+    "name": "Allmas",
+    "email": "contact@allmas-tn.com"
+  },
+  "contributors": [],
+  "bugs": {},
+  "directories": {
+    "lib": "src",
+    "test": "test/"
+  },
+  "engines": {
+    "node": ">= 8.0.0",
+    "yarn": ">= 0.18.0"
+  },
+  "scripts": {
+    "test": "yarn run eslint && yarn run mocha",
+    "eslint": "eslint src/. test/. --config .eslintrc.json",
+    "seed": "node scripts/seed.js scripts/fake-data.js",
+    "dev": "concurrently --names \"DOCKER,NODE\" -c \"cyan.bold.inverse,green.bold.inverse\" --kill-others  --default-input-target 1 \"docker-compose up\" \"nodemon src/\"",
+    "start": "node src/",
+    "watch": "nodemon src/",
+    "mocha": "mocha test/ --recursive --exit",
+    "format": "yarn prettier '**/*.js' '**/*.json' '**/*.scss' '**/*.md' && yarn lint:fix src/. test/.",
+    "prettier": "prettier --write  --ignore-path ../.prettierignore",
+    "lint:fix": "eslint --config .eslintrc.json --fix",
+    "precommit": "lint-staged",
+    "build": "rm -rf build/ && webpack && cp -a config package.json public yarn.lock build/"
+  },
+  "lint-staged": {
+    "*.js": [
+      "yarn prettier",
+      "yarn lint:fix"
+    ],
+    "*.json": [
+      "yarn prettier"
+    ],
+    "*.scss": [
+      "yarn prettier"
+    ],
+    "*.md": [
+      "yarn prettier"
+    ]
+  },
+  "dependencies": {
+    "@feathersjs/authentication": "^2.1.7",
+    "@feathersjs/authentication-jwt": "^2.0.1",
+    "@feathersjs/authentication-local": "^1.2.1",
+    "@feathersjs/configuration": "^1.0.2",
+    "@feathersjs/errors": "^3.3.0",
+    "@feathersjs/express": "^1.2.3",
+    "@feathersjs/feathers": "^3.1.7",
+    "@feathersjs/socketio": "^3.2.2",
+    "agenda": "^2.0.2",
+    "bwip-js": "^1.7.1",
+    "chalk": "^2.4.1",
+    "compression": "^1.7.3",
+    "convert-svg-to-png": "^0.5.0",
+    "cors": "^2.8.4",
+    "dotenv": "^6.0.0",
+    "dotenv-expand": "^4.2.0",
+    "feathers-authentication-hooks": "^0.2.0",
+    "feathers-authentication-management": "^2.0.1",
+    "feathers-hooks-common": "^4.14.3",
+    "feathers-hooks-validate-joi": "^2.0.0",
+    "feathers-mongoose": "^6.1.2",
+    "feathers-versionate": "^0.2.2",
+    "helmet": "^3.12.1",
+    "html-pdf": "^2.2.0",
+    "joi": "^13.4.0",
+    "moment": "^2.24.0",
+    "mongodb-core": "^3.1.7",
+    "mongoose": "^5.2.4",
+    "nodemailer": "^4.6.8",
+    "pusher": "^2.2.0",
+    "qrcode": "^1.2.2",
+    "request-promise": "^4.2.2",
+    "serialport-js": "^1.1.0",
+    "serve-favicon": "^2.5.0",
+    "soap": "^0.25.0",
+    "uuid": "^3.3.2",
+    "winston": "^3.0.0"
+  },
+  "devDependencies": {
+    "chai": "^4.1.2",
+    "chai-as-promised": "^7.1.1",
+    "concurrently": "^3.6.0",
+    "console-probe": "^3.3.0",
+    "eslint": "^5.1.0",
+    "eslint-config-prettier": "^2.9.0",
+    "faker": "^4.1.0",
+    "husky": "^0.14.3",
+    "lint-staged": "^7.2.0",
+    "mocha": "^5.2.0",
+    "nodemon": "^1.18.3",
+    "prettier": "^1.13.7",
+    "request": "^2.87.0",
+    "webpack": "^4.20.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-node-externals": "^1.7.2"
+  }
+}

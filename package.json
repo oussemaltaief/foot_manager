@@ -1,0 +1,22 @@
+{
+  "name": "etac",
+  "version": "1.0.0",
+  "author": {
+    "name": "Allmas",
+    "email": "contact@allmas-tn.com"
+  },
+  "private": true,
+  "scripts": {
+    "server": "cd api && yarn dev",
+    "client": "cd app && yarn start",
+    "dev": "concurrently --names \"API,APP\" -c \"magenta.bold,yellow.bold\" \"yarn server\" \"yarn client\"",
+    "dist": "cd api && yarn build && cd ../app && yarn build && cd .. && rm -rf dist && mv api/build dist && cp -a app/build/* dist/public/ && rm -f dist/public/static/js/*.map dist/public/static/css/*.map"
+  },
+  "devDependencies": {
+    "concurrently": "^3.6.0"
+  },
+  "dependencies": {
+    "export-from-json": "^1.1.4",
+    "regex-escape": "^3.4.9"
+  }
+}

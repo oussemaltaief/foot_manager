@@ -1,0 +1,24 @@
+{
+  "extends": ["eslint:recommended", "react-app", "prettier"],
+  "plugins": ["react", "import"],
+  "rules": {
+    "quotes": ["error", "single"],
+    "semi": ["error", "always"],
+    "space-before-function-paren": [
+      "error",
+      { "anonymous": "always", "named": "never", "asyncArrow": "always" }
+    ],
+    "lines-between-class-members": "error",
+    "react/react-in-jsx-scope": "warn",
+    "react/no-redundant-should-component-update": "error",
+    "react/no-unused-prop-types": "warn",
+    "react/prop-types": "warn",
+    "react/no-unused-state": "warn",
+    "react/void-dom-elements-no-children": "error",
+    "react/jsx-boolean-value": ["error", "never"],
+    "import/no-unresolved": "error",
+    "import/first": "error",
+    "import/order": ["error", { "newlines-between": "always" }],
+    "no-console": "warn"
+  }
+}

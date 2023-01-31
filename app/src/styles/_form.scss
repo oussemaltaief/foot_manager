@@ -1,0 +1,40 @@
+td > .ant-form-item {
+	margin-bottom: 0;
+}
+
+.ant-form-vertical td > .ant-form-item {
+	padding-bottom: 0;
+}
+
+td > .ant-form-item + .ant-form-item {
+	margin-top: 8px;
+}
+
+.form--read-only {
+	.ant-input-disabled,
+	.ant-input-number-disabled,
+	.ant-checkbox-disabled + span,
+	.ant-select-disabled .ant-select-selection {
+		background: transparent;
+		border: transparent;
+		color: rgba(0, 0, 0, 0.65);
+	}
+	.ant-select-arrow,
+	.ant-calendar-picker-icon {
+		display: none;
+	}
+}
+.cursor {
+	cursor: pointer;
+}
+.ant-carousel .slick-slide {
+	text-align: center;
+	height: 160px;
+	line-height: 160px;
+	background: #364d79;
+	overflow: hidden;
+}
+
+.ant-carousel .slick-slide h3 {
+	color: #fff;
+}
